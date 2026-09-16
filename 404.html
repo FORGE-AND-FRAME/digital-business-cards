@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card Not Found | Cardify</title>
+<meta name="description" content="This digital business card doesn't exist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0c;
+    --text: #f5f3ef;
+    --text-dim: #b4b1ac;
+    --gold: #c9a876;
+    --border: rgba(245,243,239,0.09);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(ellipse 700px 420px at 50% 0%, rgba(201,168,118,0.14), transparent 60%),
+      var(--bg);
+    color: var(--text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    text-align: center;
+    padding: 40px 24px;
+  }
+  .mark {
+    width: 64px; height: 64px;
+    margin: 0 auto 28px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mark svg { width: 26px; height: 26px; color: var(--gold); }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(1.7rem, 5vw, 2.3rem);
+    margin: 0 0 14px;
+  }
+  p {
+    color: var(--text-dim);
+    max-width: 40ch;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+  a.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 13px 28px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #ddc190, var(--gold));
+    color: #17150f;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  a.btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+</style>
+</head>
+<body>
+  <main>
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M8 15v-2M12 15v-4M16 15v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <h1>Card Not Found</h1>
+    <p>The business card you're looking for doesn't exist.</p>
+    <a class="btn" id="home-link" href="/">Return to Cardify</a>
+  </main>
+
+  <script>
+    // GitHub Pages serves this file for any unmatched URL, at whatever depth
+    // that URL was. A plain relative link can't reliably reach the site root
+    // from an unknown depth, so set the repository name below to match your
+    // GitHub Pages project site: https://USERNAME.github.io/REPO-NAME/
+    //
+    // Using a custom domain, or a user/organization site (username.github.io)
+    // hosted at the domain root? Set SITE_BASE to "/" instead.
+    var SITE_BASE = "/digital-business-cards/";
+    document.getElementById("home-link").setAttribute("href", SITE_BASE);
+  </script>
+</body>
+</html>
