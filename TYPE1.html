@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ava Garcia - Baker Digital Card</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #12181b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Mobile Container Frame */
+        .card-container {
+            width: 100%;
+            max-width: 412px;
+            height: 840px;
+            border-radius: 28px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Soft Mint Sage Green to Sky Blue Gradient Background */
+            background: linear-gradient(180deg, #e3ece6 0%, #d8e6e5 45%, #cae0ee 100%);
+        }
+
+        /* Top Right Heart Favorite Icon */
+        .top-right-icon {
+            position: absolute;
+            top: 22px;
+            right: 22px;
+            z-index: 10;
+            color: #ffffff;
+            font-size: 24px;
+            text-decoration: none;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+            transition: transform 0.2s ease, opacity 0.2s;
+        }
+
+        .top-right-icon:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        /* Content Area */
+        .content-wrapper {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            padding: 35px 24px 0 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* LOGO SECTION */
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo-svg {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 2px;
+        }
+
+        .logo-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: #0b151b;
+            margin-top: 4px;
+        }
+
+        .logo-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 8.5px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            color: #43545e;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* PROFILE SECTION */
+        .profile-section {
+            text-align: center;
+            margin-top: 35px;
+            width: 100%;
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 38px;
+            font-weight: 800;
+            color: #0b151b;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 15px;
+            font-weight: 500;
+            color: #1c272e;
+            margin-top: 10px;
+        }
+
+        /* MINIMALIST SOCIAL BUTTONS */
+        .social-links {
+            display: flex;
+            gap: 28px;
+            margin-top: 28px;
+            justify-content: center;
+        }
+
+        .social-btn {
+            color: #0b151b;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.2s ease, color 0.2s;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            color: #3b505c;
+        }
+
+        /* MAIN ACTION BUTTONS WITH SCALLOPED / DOTTED BORDER EFFECT */
+        .links-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 28px;
+            z-index: 4;
+        }
+
+        .btn-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px;
+            background-color: #071219; /* Deep dark blue/black */
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14.5px;
+            font-weight: 400;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            transition: all 0.2s ease;
+
+            /* Scalloped / Jagged Edge Pill Shape using Border Image Dotted trick */
+            border-radius: 50px;
+            border: 3px dotted #071219;
+            outline: 2px solid #071219;
+            outline-offset: -1px;
+        }
+
+        .btn-link:hover {
+            background-color: #12212b;
+            border-color: #12212b;
+            outline-color: #12212b;
+            transform: translateY(-2px);
+        }
+
+        .btn-link i {
+            position: absolute;
+            left: 20px;
+            font-size: 15px;
+            color: #ffffff;
+        }
+
+        /* CHERRY CAKE IMAGE AT BOTTOM */
+        .bottom-image-container {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 380px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .bottom-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        
+       
+        <!-- Foreground Content -->
+        <div class="content-wrapper">
+            <!-- Logo Section with Link -->
+            <a href="https://example.com" class="logo-link">
+                <!-- Recreated Cupcake & Diamond SVG Logo -->
+                <svg class="logo-svg" viewBox="0 0 100 100" fill="none" stroke="#0b151b" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Diamond Frame -->
+                    <rect x="22" y="22" width="56" height="56" transform="rotate(45 50 50)" rx="4"/>
+                    <!-- Cupcake Base -->
+                    <path d="M40 60 L43 73 H57 L60 60 Z"/>
+                    <!-- Frosting Swirls -->
+                    <path d="M37 60 Q35 53 42 53 Q45 47 50 47 Q55 47 58 53 Q65 53 63 60 Z"/>
+                    <path d="M42 53 Q50 40 50 36 Q50 34 50 34 C50 34 58 45 58 53"/>
+                    <!-- Cherry on top -->
+                    <circle cx="50" cy="33" r="3.5" fill="#0b151b"/>
+                    <path d="M51 30 Q56 24 60 25" stroke-linecap="round"/>
+                    <!-- Decorative Sparkles & Leaves -->
+                    <path d="M23 42 L25 45 L23 48 L21 45 Z" fill="#0b151b"/>
+                    <path d="M77 55 L79 58 L77 61 L75 58 Z" fill="#0b151b"/>
+                    <path d="M66 64 C70 65 72 70 72 70 C72 70 67 70 65 66"/>
+                    <path d="M68 67 L74 72"/>
+                </svg>
+                <div class="logo-title">LOGO TEXT HERE</div>
+                <div class="logo-subtitle">SLOGAN HERE</div>
+            </a>
+
+            <!-- Profile Info Section -->
+            <div class="profile-section">
+                <h1 class="name">Ava Garcia</h1>
+                <p class="title">Baker</p>
+
+                <!-- Minimalist Social Links with Hyperlinks -->
+                <div class="social-links">
+                    <a href="https://facebook.com/avagarcia" target="_blank" class="social-btn" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/avagarcia" target="_blank" class="social-btn" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/18005550199?text=Hello%2C%20I%20would%20like%20more%20information!" target="_blank" class="social-btn" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Action Buttons with Hyperlinks -->
+            <div class="links-section">
+                <a href="tel:+18005550199" class="btn-link">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Phone</span>
+                </a>
+                
+                <a href="mailto:ava.garcia@example.com" class="btn-link">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+
+                <a href="https://example.com" target="_blank" class="btn-link">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>Website</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Vintage Frosted Cake Image at Bottom -->
+        <div class="bottom-image-container">
+            <img src=https://unsplash.com/photos/black-berries-on-white-cake-tA3sJ4u09eU alt="Vintage Frosted Cake with Cherries">
+        </div>
+
+    </div>
+
+</body>
+</html>
